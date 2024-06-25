@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        body {
+            margin-top: 70px;
+            /* 确保正文内容不会被固定的导航栏遮挡 */
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 15px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5em;
+            flex: 1;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex: 2;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: color 0.3s, text-decoration 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ff6347;
+            /* 悬停时的文本颜色 */
+            text-decoration: underline;
+            /* 悬停时的下划线 */
+        }
+
+        .burger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 21px;
+            flex: 1;
+            align-items: flex-end;
+        }
+
+        .burger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .nav-links.nav-active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+
+            .burger {
+                display: flex;
+            }
+        }
+
+
+
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin: 10px 0 0;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .labor-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .labor-item {
+            flex: 1 1 calc(50% - 20px);
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .labor-item img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .labor-item h3 {
+            font-size: 1.5em;
+            margin: 15px 0 10px;
+        }
+
+        .labor-item p {
+            padding: 0 20px 20px;
+            color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .labor-section img {
+            height: 303.22px;
+        }
+
+        .tribute {
+            background-color: #eee;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .tribute h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .tribute p {
+            font-size: 1.2em;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        audio {
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">劳动概述</div>
+        <ul class="nav-links">
+            <li><a href="guide.html">主页</a></li>
+            <li><a href="个人简介.html">个人简介</a></li>
+            <li><a href="家乡介绍.html">家乡介绍</a></li>
+            <li><a href="劳动概述.html">劳动概述</a></li>
+
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <header>
+        <h1>劳动之美</h1>
+        <p>致敬每一位辛勤劳动者</p>
+    </header>
+    <main>
+        <section class="labor-section">
+            <div class="labor-item">
+                <img src="./图片/1aaccfccf065ba2950a142a26fa3147.png" alt="Construction Worker">
+                <h3>建筑工人</h3>
+                <p>在高温下挥洒汗水，建设城市的脊梁。</p>
+            </div>
+            <div class="labor-item">
+                <img src="./图片/322533fc5094dc19bbc150f8402f9fd.png" alt="Farmer">
+                <h3>农民</h3>
+                <p>在田间地头辛勤耕作，保障粮食的供给。</p>
+            </div>
+            <div class="labor-item">
+                <img src="./图片/0fec131c2f4e5ebfffdf959d1b3c4ee.png" alt="Doctor">
+                <h3>医生</h3>
+                <p>在医院里救死扶伤，守护健康的守护神。</p>
+            </div>
+            <div class="labor-item">
+                <img src="./图片/2eaf95df5addcb450d8799e562ec89e.png" alt="Teacher">
+                <h3>教师</h3>
+                <p>在课堂上传道授业，点燃知识的火炬。</p>
+            </div>
+        </section>
+        <section class="tribute">
+            <div class="tribute-text">
+                <h2>致敬所有劳动者</h2>
+                <p>“你们的辛勤劳动，让城市更美丽。”</p>
+                <p>“你们的付出，确保了我们的温饱。”</p>
+                <p>“你们的无私奉献，挽救了无数生命。”</p>
+                <p>“你们的教诲，点亮了孩子们的未来。”</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 我的网站|设计者:gc</p>
+        <address>
+            联系我们：<br>
+            电话: 139-9599-4970
+        </address>
+    </footer>
+    <script src="script.js"></script>
+
+    <audio src="./中国广播艺术团合唱团 - 咱们工人有力量.mp3" autoplay loop controls></audio>
+
+</body>
+
+</html>

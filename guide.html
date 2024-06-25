@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <link rel="stylesheet" href="styles.css">
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    background: url(./图片/preview1.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5em;
+    flex: 1;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex: 2;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff6347; /* 悬停时的文本颜色 */
+    text-decoration: underline; /* 悬停时的下划线 */
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 21px;
+    flex: 1;
+    align-items: flex-end;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links.nav-active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .burger {
+        display: flex;
+    }
+}
+
+.box {
+    width: 800px; /* 调整宽度以适应三个列表项 */
+    height: 340px;
+    margin: 50px auto;
+    border: 2px solid #FFF;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 5px 5px 7px rgba(255, 255, 255, 0.5);
+}
+
+.box ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.box li {
+    float: left;
+    position: relative;
+    width: 200px;
+    height: 340px;
+    box-shadow: 0 0 25px #000000;
+    transition: all 0.5s;
+}
+
+.box li img {
+    width: 100%;
+    height: 280px; /* 调整图片高度以适应容器 */
+    object-fit: cover; /* 确保图片以覆盖方式显示 */
+}
+
+.box li .text {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-size: 16px;
+    color: #FFF;
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    line-height: 30px;
+    background: #000;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.box:hover li {
+    width: 150px; /* 调整缩小后的宽度以适应三个列表项 */
+}
+
+.box li:hover {
+    width: 500px; /* 调整放大后的宽度 */
+}
+    
+</style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">MySite</div>
+        <ul class="nav-links">
+            <li><a href="guide.html">主页</a></li>
+            <li><a href="个人简介.html">个人简介</a></li>
+            <li><a href="家乡介绍.html">家乡介绍</a></li>
+            <li><a href="劳动概述.html">劳动概述</a></li>
+
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <script src="script.js"></script>
+
+
+    <ul class="box">
+        <li>
+            <a href="个人简介.html"><img src="./图片/人物男.png" alt="" ></a>
+            <div class="text">
+                个人简介
+            </div>
+        </li>
+        <li>
+            <a href="家乡介绍.html"><img src="./图片/image1.png" alt="" ></a>
+            <div class="text">
+                家乡介绍
+            </div>
+        </li>
+        <li>
+            <a href="劳动概述.html"><img src="./图片/image.png" alt="" ></a>
+            <div class="text">
+                劳动概述
+            </div>
+        </li>
+       
+    </ul>
+
+
+
+    
+</body>
+</html>

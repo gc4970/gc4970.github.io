@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+
+
+
+
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+           
+        }
+
+        body {
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 15px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5em;
+            flex: 1;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex: 2;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: color 0.3s, text-decoration 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ff6347;
+            /* 悬停时的文本颜色 */
+            text-decoration: underline;
+            /* 悬停时的下划线 */
+        }
+
+        .burger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 21px;
+            flex: 1;
+            align-items: flex-end;
+        }
+
+        .burger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .nav-links.nav-active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+
+            .burger {
+                display: flex;
+            }
+        }
+
+        body {
+            margin-top: 70px;
+            /* 确保正文内容不会被固定的导航栏遮挡 */
+        }
+
+
+        .countryside {
+            width: 981px;
+            height: auto;
+            overflow: auto;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            /* 垂直居中 */
+            height: 100vh;
+            /* 全视口高度 */
+            flex-direction: column;
+            /* 垂直排列 */
+        }
+
+        .countryside .top {
+            position: relative;
+        }
+
+        .countryside .about {
+            width: 100%;
+            height: 400px;
+
+            text-align: center;
+            border: 2px solid rgba(255, 255, 255, .2);
+            box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+        }
+
+        .countryside .about .a1 {
+            font-size: 14px;
+            font-family: 华文新魏;
+        }
+
+        .countryside .about .a2 {
+            display: flex;
+            /* 使用 Flexbox 排列 */
+            justify-content: space-around;
+            /* 平均分布内容 */
+
+        }
+
+
+        .countryside .scenery {
+            width: 100%;
+            height: 400px;
+
+            text-align: center;
+
+        }
+
+        .countryside .scenery .s1 {
+            font-size: 14px;
+            font-family: 华文新魏;
+        }
+
+
+
+        .countryside .scenery .s2 {
+            font-size: 14px;
+            font-family: 华文新魏;
+          
+           
+        }
+
+        .countryside .scenery .s2 {
+            display: flex;
+            /* 使用 Flexbox 排列 */
+            justify-content: space-around;
+            /* 平均分布内容 */
+        }
+
+
+
+        .countryside .scenery img {
+            width: 400px;
+            height: 213px;
+        }
+
+
+        .countryside .overview {
+            width: 100%;
+            background-color: #f0f0f0;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .countryside table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .countryside th,
+        .countryside td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .countryside th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .countryside tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .countryside tr:hover {
+            background-color: #ddd;
+        }
+
+        .countryside .overview h1{
+            text-align: center;
+            font-size: 28px;
+            font-family: 华文新魏;
+        }
+        .countryside .scenery .s2{
+            margin-bottom: 20px;
+            margin-bottom: 20px;
+            border: 2px solid rgba(255, 255, 255, .2);
+            box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+        }
+        .countryside .overview {
+            margin-top: 500px;
+        }
+        .countryside .about{
+            margin-bottom: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <nav class="navbar">
+        <div class="logo">家乡介绍</div>
+        <ul class="nav-links">
+            <li><a href="guide.html">主页</a></li>
+            <li><a href="个人简介.html">个人简介</a></li>
+            <li><a href="家乡介绍.html">家乡介绍</a></li>
+            <li><a href="劳动概述.html">劳动概述</a></li>
+
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <script src="script.js"></script>
+
+
+    <div class="countryside">
+        <div class="top"><img src="./图片/hubei.png" alt=""></div>
+        <div class="about">
+            <div class="a1">
+                <h1>关于湖北</h1>
+                <hr color="black" width="60px">
+            </div>
+            <div class="a2">
+                <div><img src="./图片/image1.png " width="400px" sizes="200px"></div>
+                <div class="t">
+                    <p style="font-size: larger;">湖北</p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;湖北省,简称鄂”,中华人民共和国省级行政区,省会武汉。地处中国中部地区,东邻安徽,
+                    西连重庆,西北与陕西接壤,南接江西、湖南。北与河南毗邻。介于北纬29o0153o一33647”、
+                    东经108o2142o-116o0750间。东西长约740 千米,南北宽约470千米,总面积18.59万平方千米。
+                    占中国总面积的1.94%、最东端是黄梅县,最西端是利川市,最南端是来凤县,最北端是部西县。湖北省地势大致为东、西、北三面环山,
+                    中间低平,略呈向南敞开的9下完整盆地、在全省总面积中,
+                    山地占56%,丘陵占24%,平原湖区占20%,属长江水系。
+                </div>
+            </div>
+        </div>
+        <div class="scenery">
+            <div class="s1">
+                <h1>湖北景点</h1>
+                <hr color="black" width="60px">
+            </div>
+            <div class="s2">
+                <div><img src="./图片/0568dd1a70feb12dd9fdc9a511a7eb5.png" alt="" width="400px" sizes="200px"></div>
+                <div>
+                    <p style="font-size: large; font-weight: 600;">黄鹤楼</p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;黄鹤楼,位于湖北省武汉市武昌区蛇山西山坡特1号,濒临万里长江,是武汉市的地标建筑。始建于三国吴黄武二年(223年),历代屡加重修,现存建筑以清代“同治楼”为原型设计,重建于1985年。黄鹤楼因唐代诗人崔颢登楼所题《黄鹤楼》一诗而名扬四海,自古有“天下绝景”之美誉,与晴川阁、古琴台并称为“武汉三大名胜”,与湖南岳阳楼、江西南昌滕王阁并称为“江南三大名楼”,是“武汉十大景”之首、“中国古代四大名楼”之一、“中国十大历史文化名楼”之一,世称“天下江山第一楼”。
+                </div>
+            </div>
+            <div class="s2">
+                <div><img src="./图片/2bcf788aae9d7066ef69ac046cef670.png" alt="" width="400px" sizes="200px"></div>
+                <div>
+                    <p style="font-size: large; font-weight: 600;">三峡</p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;湖北三峡,全长约193千米,位于中国重庆市和湖北省之间,沿途两岸奇峰陡立、峭壁对峙。三峡自西向东依次为瞿塘峡、巫峡、西陵峡,是中国十大风景名胜之一,也是中国40佳旅游景观之首。
+                </div>
+            </div>
+            <div class="s2">
+                <div><img src="./图片/a5888435ae3fb605025f22fb8b884c6.png" alt=""></div>
+                <div>
+                    <p style="font-size: large; font-weight: 600;">武当山</p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;武当山,位于中国中部湖北省西北部十堰市丹江口市境内,是中国著名的道教圣地,又名太和山、谢罗山、参上山、仙室山。古有“太岳”、“玄岳”、“大岳”之称,被尊为“皇室家庙”,以“四大名山皆拱揖,五方仙岳共朝宗”的“五岳之冠”地位闻名于世。武当山不仅是道教名山,还是武当武术的发源地,被称为“亘古无双胜境,天下第一仙山”。武当武术是中华武术的重要流派,元末明初,道士张三丰集其大成,开创武当派。
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="overview">
+            <h1>湖北概况</h1>
+            <hr color="black" width="60px">
+            <table>
+                <thead>
+                    <tr>
+                        <th>市</th>
+                        <th>辖区</th>
+                        <th>面积 (平方公里)</th>
+                        <th>2023年户籍人口 (万)</th>
+                        <th>2023年常住人口 (万)</th>
+                        <th>2023年GDP (亿)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>武汉市</td>
+                        <td>13个区</td>
+                        <td>8483</td>
+                        <td>944.42</td>
+                        <td>1373.90</td>
+                        <td>20011.65</td>
+                    </tr>
+                    <tr>
+                        <td>黄石市</td>
+                        <td>4个区,1个县,1个代管市</td>
+                        <td>4576</td>
+                        <td>273.1</td>
+                        <td>244.4</td>
+                        <td>2200</td>
+                    </tr>
+                    <tr>
+                        <td>十堰市</td>
+                        <td>3个区,4个县,1个代管市</td>
+                        <td>23698</td>
+                        <td>339.21</td>
+                        <td>316.62</td>
+                        <td>2359.03</td>
+                    </tr>
+                    <tr>
+                        <td>宜昌市</td>
+                        <td>5个区,5个县,3个代管市</td>
+                        <td>21081</td>
+                        <td>386.54</td>
+                        <td>392</td>
+                        <td>5985.28</td>
+                    </tr>
+                    <tr>
+                        <td>襄阳市</td>
+                        <td>3个区,3个县,3个代管市</td>
+                        <td>19626</td>
+                        <td>585.43</td>
+                        <td>527.6</td>
+                        <td>5843</td>
+                    </tr>
+                    <tr>
+                        <td>鄂州市</td>
+                        <td>3个区</td>
+                        <td>1505</td>
+                        <td>110.1</td>
+                        <td>107.12</td>
+                        <td>1266.03</td>
+                    </tr>
+                    <tr>
+                        <td>荆门市</td>
+                        <td>2个区,1个县,2个代管市</td>
+                        <td>12100</td>
+                        <td>284.47</td>
+                        <td>254.77</td>
+                        <td>2272.3</td>
+                    </tr>
+                    <tr>
+                        <td>孝感市</td>
+                        <td>1个区,3个县,3个代管市</td>
+                        <td>8941</td>
+                        <td>500.30</td>
+                        <td>418.58</td>
+                        <td>2776.97</td>
+                    </tr>
+                    <tr>
+                        <td>荆州市</td>
+                        <td>2个区,2个县,4个代管市</td>
+                        <td>14104</td>
+                        <td>625.08</td>
+                        <td>513.51</td>
+                        <td>3151.49</td>
+                    </tr>
+                    <tr>
+                        <td>黄冈市</td>
+                        <td>1个区,7个县,2个代管市</td>
+                        <td>17453</td>
+                        <td>721.7</td>
+                        <td>579.02</td>
+                        <td>2884.68</td>
+                    </tr>
+                    <tr>
+                        <td>咸宁市</td>
+                        <td>1个区,4个县,1个代管市</td>
+                        <td>10019</td>
+                        <td>303.61</td>
+                        <td>261.67</td>
+                        <td>1819.23</td>
+                    </tr>
+                    <tr>
+                        <td>随州市</td>
+                        <td>1个区,1个县,1个代管市</td>
+                        <td>9636</td>
+                        <td>243</td>
+                        <td>201.37</td>
+                        <td>1328.78</td>
+                    </tr>
+                    <tr>
+                        <td>恩施州</td>
+                        <td>6个县,2个代管市</td>
+                        <td>24111</td>
+                        <td>400.25</td>
+                        <td>340.24</td>
+                        <td>1481.29</td>
+                    </tr>
+                    <tr>
+                        <td>仙桃市</td>
+                        <td>3个街道,15个镇</td>
+                        <td>2538</td>
+                        <td>150.96</td>
+                        <td>110.6</td>
+                        <td>1102</td>
+                    </tr>
+                    <tr>
+                        <td>潜江市</td>
+                        <td>6个街道,10个镇</td>
+                        <td>2004</td>
+                        <td>99.28</td>
+                        <td>85.57</td>
+                        <td>886.65</td>
+                    </tr>
+                    <tr>
+                        <td>天门市</td>
+                        <td>3个街道,21个镇,1个乡</td>
+                        <td>2622</td>
+                        <td>158.02</td>
+                        <td>110.58</td>
+                        <td>712.17</td>
+                    </tr>
+                    <tr>
+                        <td>神农架林区</td>
+                        <td>6个镇,2个乡</td>
+                        <td>3253</td>
+                        <td>7.7556</td>
+                        <td>6.29</td>
+                        <td>37.8</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>
